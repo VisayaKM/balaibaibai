@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balai Baibai Beach Resort — Gonzaga, Cagayan</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink: #211C18;
+  --sand: #F1E9DA;
+  --rattan: #8B5E34;
+  --lagoon: #1F5C57;
+  --gold: #E8A33D;
+}
+
+body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+.mock-banner {
+  background: var(--gold);
+  color: var(--ink);
+  text-align: center;
+  padding: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(33,28,24,0.1);
+}
+.logo {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -0.01em;
+}
+.logo span { color: var(--lagoon); }
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 28px;
+}
+.nav-cta {
+  background: var(--lagoon);
+  color: var(--sand);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  padding: 72px 0 48px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 800px) { .hero { grid-template-columns: 1fr; padding: 40px 0; } }
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--rattan);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
+}
+h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+@media (max-width: 800px) { h1 { font-size: 34px; } }
+
+.hero p.sub {
+  font-size: 17px;
+  color: rgba(33,28,24,0.75);
+  max-width: 460px;
+  margin-bottom: 28px;
+}
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+}
+.btn-primary { background: var(--lagoon); color: var(--sand); }
+.btn-secondary { background: transparent; color: var(--ink); border: 1px solid rgba(33,28,24,0.3); }
+
+.photo-block {
+  background: repeating-linear-gradient(135deg, rgba(139,94,52,0.15), rgba(139,94,52,0.15) 10px, rgba(139,94,52,0.06) 10px, rgba(139,94,52,0.06) 20px);
+  border: 1px dashed var(--rattan);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rattan);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  text-align: center;
+  padding: 16px;
+}
+.hero .photo-block { height: 360px; }
+
+/* LOGBOOK STRIP — signature element */
+.logbook {
+  background: var(--ink);
+  color: var(--sand);
+  padding: 20px 0;
+  margin: 40px 0;
+}
+.logbook .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+.logbook-entry {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.logbook-entry .num {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--gold);
+}
+.logbook-entry .label { color: rgba(241,233,218,0.65); font-size: 12px; }
+
+/* SECTIONS */
+section.block { padding: 56px 0; }
+h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.section-sub { color: rgba(33,28,24,0.6); margin-bottom: 32px; font-size: 15px; }
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 800px) { .room-grid { grid-template-columns: 1fr; } }
+.room-card .photo-block { height: 180px; margin-bottom: 12px; }
+.room-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; margin-bottom: 4px; }
+.room-card p { font-size: 14px; color: rgba(33,28,24,0.65); }
+
+.amenity-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 800px) { .amenity-row { grid-template-columns: repeat(2, 1fr); } }
+.amenity {
+  border: 1px solid rgba(33,28,24,0.12);
+  border-radius: 10px;
+  padding: 20px;
+  background: rgba(255,255,255,0.35);
+}
+.amenity .tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--lagoon);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.amenity h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; margin-bottom: 4px; }
+.amenity p { font-size: 13px; color: rgba(33,28,24,0.6); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+@media (max-width: 800px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+.gallery-grid .photo-block { height: 130px; }
+
+.contact-card {
+  background: var(--lagoon);
+  color: var(--sand);
+  border-radius: 14px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 800px) { .contact-card { grid-template-columns: 1fr; } }
+.contact-card h2 { color: var(--sand); }
+.contact-line {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+.contact-line .k { color: var(--gold); min-width: 70px; }
+
+footer {
+  padding: 32px 0;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(33,28,24,0.5);
+  border-top: 1px solid rgba(33,28,24,0.1);
+}
+
+/* GETTING THERE */
+.route-card {
+  border: 1px solid rgba(33,28,24,0.12);
+  border-radius: 10px;
+  padding: 20px 22px;
+  background: rgba(255,255,255,0.35);
+  margin-bottom: 12px;
+}
+.route-card .from {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--rattan);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.getting-there-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 800px) { .getting-there-grid { grid-template-columns: 1fr; } }
+.getting-there-grid .photo-block { height: 260px; }
+
+/* FOCUS + MOTION */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--lagoon);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* MOBILE NAV */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(33,28,24,0.25);
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.nav-links { display: flex; align-items: center; }
+@media (max-width: 720px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--sand);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 28px 24px;
+    border-bottom: 1px solid rgba(33,28,24,0.1);
+    gap: 14px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { margin-left: 0; }
+  nav { position: relative; }
+}
+</style>
+</head>
+<body>
+
+<div class="mock-banner">MOCKUP — placeholder photo blocks stand in for real resort photos // not yet live</div>
+
+<div class="container">
+  <nav>
+    <div class="logo">Balai <span>Baibai</span></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#getting-there">Getting there</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Gonzaga, Cagayan · Beachfront</div>
+      <h1>A dark-sand beach that's been Cagayan's weekend escape since before it had a website.</h1>
+      <p class="sub">Balai Baibai Beach Resort — native-style cabins, a garden pool, and a stretch of coastline near the Cagayan River. Easy to reach, easy to love.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#contact">Book your stay</a>
+        <a class="btn btn-secondary" href="#rooms">See rooms</a>
+      </div>
+    </div>
+    <div class="photo-block">PHOTO: beachfront hero shot</div>
+  </div>
+</div>
+
+<div class="logbook">
+  <div class="container">
+    <div class="logbook-entry"><span class="num">20,889</span><span class="label">Facebook likes</span></div>
+    <div class="logbook-entry"><span class="num">1,836</span><span class="label">check-ins</span></div>
+    <div class="logbook-entry"><span class="num">159</span><span class="label">talking about this</span></div>
+    <div class="logbook-entry"><span class="num">24/7</span><span class="label">always open</span></div>
+  </div>
+</div>
+
+<div class="container">
+  <section class="block reveal" id="rooms">
+    <h2>Where you'll stay</h2>
+    <p class="section-sub">Native-inspired cabins, built for a simple beach weekend.</p>
+    <div class="room-grid">
+      <div class="room-card">
+        <div class="photo-block">PHOTO: garden cabin</div>
+        <h3>Garden room</h3>
+        <p>Cozy, shaded, a short walk to the shore.</p>
+      </div>
+      <div class="room-card">
+        <div class="photo-block">PHOTO: beachfront hut</div>
+        <h3>Beachfront hut</h3>
+        <p>Fall asleep to the sound of the waves.</p>
+      </div>
+      <div class="room-card">
+        <div class="photo-block">PHOTO: family cabin</div>
+        <h3>Family cabin</h3>
+        <p>Air-conditioned, room for the whole barkada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="amenities">
+    <h2>What's here</h2>
+    <p class="section-sub">Everything you need for a full day at the beach.</p>
+    <div class="amenity-row">
+      <div class="amenity"><div class="tag">Pool</div><h4>Garden pool</h4><p>Freshwater pool set in the garden, good for kids.</p></div>
+      <div class="amenity"><div class="tag">Parking</div><h4>On-site parking</h4><p>Space for your car or van at the entrance.</p></div>
+      <div class="amenity"><div class="tag">Dining</div><h4>Picnic area</h4><p>Bring your own ihaw-ihaw or order in.</p></div>
+      <div class="amenity"><div class="tag">Beach</div><h4>Dark-sand shore</h4><p>Steps from the cabins, right on the coastline.</p></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="gallery">
+    <h2>Gallery</h2>
+    <p class="section-sub">A few from the beach — full set coming once your photos are in.</p>
+    <div class="gallery-grid">
+      <div class="photo-block">PHOTO 1</div>
+      <div class="photo-block">PHOTO 2</div>
+      <div class="photo-block">PHOTO 3</div>
+      <div class="photo-block">PHOTO 4</div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="getting-there">
+    <h2>Getting there</h2>
+    <p class="section-sub">Reachable from Tuguegarao and the rest of Cagayan Valley in a half-day drive.</p>
+    <div class="getting-there-grid">
+      <div class="photo-block">MAP: Gonzaga, Cagayan</div>
+      <div>
+        <div class="route-card">
+          <div class="from">From Tuguegarao City</div>
+          <p>About 2.5–3 hours by van or private vehicle, via the Cagayan Valley Road heading north.</p>
+        </div>
+        <div class="route-card">
+          <div class="from">From Aparri</div>
+          <p>Around 1 hour east along the coastal road toward Gonzaga.</p>
+        </div>
+        <div class="route-card">
+          <div class="from">Landmark</div>
+          <p>Near the mouth of the Cagayan River — ask locals for Balai Baibai in Gonzaga if you lose signal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="contact">
+    <div class="contact-card">
+      <div>
+        <h2>Plan your visit</h2>
+        <p style="color: rgba(241,233,218,0.8); font-size: 14px;">Message us on Facebook or call ahead — walk-ins welcome, always open.</p>
+      </div>
+      <div>
+        <div class="contact-line"><span class="k">Phone</span> +63 917 102 8712</div>
+        <div class="contact-line"><span class="k">Location</span> Gonzaga, Cagayan</div>
+        <div class="contact-line"><span class="k">Facebook</span> facebook.com/balaibaibai</div>
+        <div class="contact-line"><span class="k">Hours</span> Always open</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>Balai Baibai Beach Resort · Gonzaga, Cagayan · Mockup build</footer>
+
+<script>
+var toggle = document.getElementById('menuToggle');
+var links = document.getElementById('navLinks');
+toggle.addEventListener('click', function () {
+  var open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+links.querySelectorAll('a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduceMotion && 'IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+}
+</script>
+
+</body>
+</html>
